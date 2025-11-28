@@ -1,20 +1,33 @@
+import React from 'react';
+import { Provider as PaperProvider, DefaultTheme, configureFonts } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import VolunteerDashboard from './src/Volunteer/components/VolunteerDashboard';
 
-export default function App() {
+// Configure the theme
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#3f51b5',
+    accent: '#f50057',
+    background: '#f5f5f5',
+    surface: '#ffffff',
+    text: '#000000',
+    error: '#f44336',
+  },
+  roundness: 8,
+};
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <PaperProvider theme={theme}>
+        <StatusBar style="auto" />
+        <VolunteerDashboard />
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
