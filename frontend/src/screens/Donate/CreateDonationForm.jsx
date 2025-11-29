@@ -30,7 +30,6 @@ export default function CreateDonationForm({ navigation }) {
       source={require("../../../assets/form3.jpg")}
       style={styles.bg}
     >
-      {/* Back arrow floating on background */}
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={28} color="#fff" />
       </TouchableOpacity>
@@ -117,16 +116,16 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: 'absolute',
-    top: 40, // distance from top of screen
+    top: 55, 
     left: 20,
     zIndex: 10,
-    backgroundColor: 'rgba(0,0,0,0.4)',
+    backgroundColor: 'rgba(255,255,255,0.15)',
     padding: 8,
     borderRadius: 25,
   },
   formCard: {
     borderRadius: 25,
-    marginTop: 100, // pushed down so arrow is above the card
+    marginTop: 100, 
     padding: 25,
     overflow: "hidden",
     backgroundColor: "rgba(255,255,255,0.15)",

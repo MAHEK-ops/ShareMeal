@@ -11,7 +11,7 @@ const DonateScreen = ({ navigation }) => {
       pickupAddress: '123 Street, City',
       contact: '9876543210',
       status: 'Available',
-      image: require('../../../assets/form2.png'),
+      image: require('../../../assets/sandwich.jpg'),
     },
     {
       id: '2',
@@ -20,7 +20,7 @@ const DonateScreen = ({ navigation }) => {
       pickupAddress: '456 Avenue, City',
       contact: '9876543211',
       status: 'Accepted',
-      image: require('../../../assets/form2.png'),
+      image: require('../../../assets/fruits.jpg'),
     },
     {
       id: '3',
@@ -29,7 +29,7 @@ const DonateScreen = ({ navigation }) => {
       pickupAddress: '789 Road, City',
       contact: '9876543212',
       status: 'Cancelled',
-      image: require('../../../assets/form2.png'),
+      image: require('../../../assets/pizza.jpg'),
     },
   ]);
 
@@ -68,7 +68,6 @@ const DonateScreen = ({ navigation }) => {
         <Text style={styles.info}>Pickup: {item.pickupAddress}</Text>
         <Text style={styles.info}>Contact: {item.contact}</Text>
 
-        {/* 🔴 Cancel Button — only when NOT cancelled */}
         {item.status !== 'Cancelled' && (
           <TouchableOpacity
             style={styles.cancelButton}
@@ -141,7 +140,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
 
-  /* SECTION TITLE */
   title: {
     fontSize: 22,
     fontWeight: '700',
@@ -149,13 +147,10 @@ const styles = StyleSheet.create({
     color: '#16A085',
   },
 
-  /* CARD */
   card: {
     backgroundColor: '#ffffff',
     borderRadius: 14,
     marginBottom: 14,
-
-    // Light shadow for modern look
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
@@ -166,14 +161,14 @@ const styles = StyleSheet.create({
 
   foodImage: {
     width: '100%',
-    height: 120, // Reduced
+    height: 120, 
     resizeMode: 'cover',
     borderTopLeftRadius: 14,
     borderTopRightRadius: 14,
   },
 
   cardBody: {
-    padding: 12, // Reduced padding
+    padding: 12, 
   },
 
   cardHeader: {
@@ -184,12 +179,11 @@ const styles = StyleSheet.create({
   },
 
   foodType: {
-    fontSize: 17, // Reduced
+    fontSize: 17, 
     fontWeight: '700',
     color: '#333',
   },
 
-  /* STATUS BADGE */
   statusBadge: {
     paddingVertical: 4,
     paddingHorizontal: 10,
@@ -204,14 +198,12 @@ const styles = StyleSheet.create({
   acceptedBG: { backgroundColor: '#3498DB' },
   cancelledBG: { backgroundColor: '#E74C3C' },
 
-  /* INFO TEXT */
   info: {
     fontSize: 13,
     marginBottom: 3,
     color: '#555',
   },
 
-  /* CANCEL BUTTON */
   cancelButton: {
     backgroundColor: '#E74C3C',
     paddingVertical: 8,
@@ -226,7 +218,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
 
-  /* TOP SECTION: Create Button + Tagline */
   buttonWrapper: {
     paddingHorizontal: 16,
     marginTop: 12,
